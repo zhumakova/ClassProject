@@ -57,6 +57,6 @@ class Human:
 
 human1=Human(name='John',age=48,weight=90,height=185,gender='M')
 human2=Human(name='sue',age=48,weight=90,height=185,gender='M')
-human3=Human(name='hue',age=48,weight=90,height=185,gender='M')
+
 
 human1.add_viruse('covid')
