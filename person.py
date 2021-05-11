@@ -28,4 +28,6 @@ class Person:
         self.stamina += item.stamina
         self.defense += item.defense
 
+    def __repr__(self):
+        return self.name
 

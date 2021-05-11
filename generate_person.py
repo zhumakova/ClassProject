@@ -74,21 +74,25 @@ for index,names in enumerate(sword_info_dict['name']):
                             defense=sword_info_dict['health'][index])
     sword_database.append(new_sword)
 
+for index,per in enumerate(person_database):
+    current_armor=armor_database[index]
+    current_sword=sword_database[index]
+    current_armor.armor_type('metal')
+    current_sword.sword_type('legendary')
+    per.set_weapon(current_sword)
+    per.set_armor(current_armor)
 
 
 
 
-for key,value in person_database[0].__dict__.items():
-    if isinstance(value,dict):
-        value['armor']=armor_database[0].__dict__['name']
-        value['weapon']=sword_database[0].__dict__['name']
-# person1=weapon.Sword.sword_type('rare')
+# for key,value in person_database[0].__dict__.items():
+#     if isinstance(value,dict):
+#         value['armor']=armor_database[0].__dict__['name']
+#         value['weapon']=sword_database[0].__dict__['name']
+#
 
-print(sword_database[0].__dict__)
-print(armor_database[0].__dict__)
 
-person_database[0].set_armor(armor_database[0])
-person_database[0].set_weapon(sword_database[0])
+
 print(person_database[0].__dict__)
 
 

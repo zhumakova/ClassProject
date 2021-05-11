@@ -18,3 +18,6 @@ class Sword:
         elif type == 'legendary':
             self.power *= 1.7
         self.__sword_type = type
+
+    def __repr__(self):
+        return self.name

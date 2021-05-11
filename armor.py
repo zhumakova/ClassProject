@@ -18,3 +18,6 @@ class Armor:
         elif type == 'plastic':
             self.power *= 1.2
         self.__armor_type = type
+
+    def __repr__(self):
+        return self.name
