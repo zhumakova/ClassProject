@@ -1,5 +1,6 @@
 
 class Planet:
+
     def __init__(self, name, size, loc):
         self.name = name
         self.size = size
@@ -14,7 +15,7 @@ class Planet:
         self.fauna = False
         self.flora_list = None
         self.fauna_list = None
-        self.soil=False
+
 
     def add_sat(self, sat_list: list):
         for sat in sat_list:
@@ -41,21 +42,26 @@ class Planet:
         if self.flora and self.fauna:
             self.flora_list = []
             self.fauna_list = []
+
+    def add_fauna(self,animal):
+        if self.fauna_list is not None:
+            if animal not in self.fauna_list:
+                self.fauna_list.append(animal)
+
+
+
+
 """MRO"""
 
 
-class Soil(Planet):
-
-    def __init__(self, name, size, loc, soil):
-        super().__init__(name, size, loc)
-        self.soil = soil
-
-
 class Giant(Planet):
+    def __init__(self,name,size,loc):
+        super().__init__(name,size,loc)
+        self.size += 100
 
-    def __init__(self, name, size, loc):
-        super().__init__(name, size, loc)
-        self.size+=100
+
+class Soil(Giant):
+    pass
 
 class Gas(Giant):
 
@@ -80,15 +86,20 @@ class Gas(Giant):
 
 
 
+
+
 friendly = Gas('Friend', 30, 'andromeda', 'O')
 friendly.temp = -19
-friendly.set_humanity()
+
 friendly.add_population(100)
+
 friendly.water = True
 friendly.oxygen = True
+
 friendly.set_flora_and_fauna()
 friendly.set_live()
-print(friendly.__dict__)
+
+
 """
 1. Создать класс Soil,Giants
 """
