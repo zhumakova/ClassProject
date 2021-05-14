@@ -22,7 +22,7 @@ class Developer(Employee):
         self.work_exp = work_exp
         self.exp = exp
         self.prog_lang = prog_lang
-        self.position = position
+        self.__position = position
         self.__salary = 50001
 
 
@@ -40,6 +40,18 @@ class Developer(Employee):
     @salary.deleter
     def salary(self):
         self.__salary = 50000
+
+    @property
+    def position(self):
+        return self.__position
+
+    @position.setter
+    def position(self,new_pos:str):
+        if new_pos in ['junior','middle','senior','team lead']:
+            self.__position=new_pos
+        else:
+            print('Недопустимое значение')
+
 
 
 import random
@@ -75,5 +87,5 @@ for key,value in dict1.items():
 
 print(erbol.position)
 print(dict1)
-
-
+erbol.position='tgr'
+print(erbol.position)
